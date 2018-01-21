@@ -122,7 +122,12 @@ public class Main {
         		
         		if(dist[next] >dist[(int)curr] * wi)
         		{
+        			if(dist[next]==0)
+        				dist[next] = dist[(int)curr] + wi;	
+        			else
         			dist[next] = dist[(int)curr] * wi;
+        			
+        			System.out.println("now dist is"+ next +" "+dist[next]);
         			pq.add(new double []{dist[next],next});
         			
         		}
